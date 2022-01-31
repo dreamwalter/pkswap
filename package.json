@@ -5,7 +5,9 @@
   "scripts": {
     "analyze": "ANALYZE=true yarn build",
     "dev": "next dev",
+    "prebuild": "rm -rf .next",
     "build": "next build",
+    "postbuild": "rm -rf node_modules/@pancakeswap/uikit/dist && cp -fR dist node_modules/@pancakeswap/uikit/dist",
     "start": "next start",
     "test": "jest",
     "test:config": "jest src/__tests__/config/ --testPathIgnorePatterns",
